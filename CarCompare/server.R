@@ -1,10 +1,18 @@
 
 library(shiny)
+library(dplyr)
+library(ggplot2)
 
-shinyServer(function(input, output) {
-  output$vclass <- renderText(input$class)
-  output$Year<-renderText(input$Year)
+function(input, output) {
+  
+  d3<- reactive({
+      filter(d2, class==input$class & year==input$Year)
+      
+  })
+  
+  
+ output$plot<-renderPlot({
+    plot(d3()$hwy, d3()$cost)
+ })
    
-  
-  
-})
+}

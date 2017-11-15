@@ -1,6 +1,9 @@
 
 library(shiny)
-d2<-read.table("C:/Coursera/DevelopingDataProducts/dataproducts3/d2.Rda")
+library(dplyr)
+library(plotly)
+
+d2<-read.table("d2.Rda")
 
 pageWithSidebar(
   headerPanel('Vehicle Fuel Efficiency'),
@@ -10,8 +13,6 @@ pageWithSidebar(
                  min = 1984, max = 2018)
   ),
   mainPanel(
-    h3("Selected Values:"),
-    textOutput("vclass"),
-    textOutput("Year")
+    plotOutput('plot')
+   )
   )
-)

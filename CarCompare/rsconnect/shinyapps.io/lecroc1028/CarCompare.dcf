@@ -1,0 +1,12 @@
+name: CarCompare
+title: CarCompare
+username:
+account: lecroc1028
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 235613
+bundleId: 1076023
+url: https://lecroc1028.shinyapps.io/CarCompare/
+when: 1510715290.13506
+asMultiple: FALSE
+asStatic: FALSE
