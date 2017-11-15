@@ -1,7 +1,6 @@
 
 library(shiny)
 library(dplyr)
-library(plotly)
 
 d2<-read.table("d2.Rda")
 
