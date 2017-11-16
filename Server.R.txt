@@ -1,0 +1,19 @@
+# Server.R
+
+library(shiny)
+library(dplyr)
+
+
+shinyServer(function(input, output, session) {
+  
+  d3<- reactive({
+      filter(d2, class==input$class & year==input$Year)
+      
+  })
+  
+  
+ output$plot<-renderPlot({
+    plot(d3()$hwy, d3()$cost)
+ })
+   
+})
