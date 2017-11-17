@@ -1,0 +1,12 @@
+name: CarFinder
+title:
+username:
+account: lecroc1028
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 236855
+bundleId: 1082004
+url: https://lecroc1028.shinyapps.io/CarFinder/
+when: 1510958290.32905
+asMultiple: FALSE
+asStatic: FALSE
