@@ -14,9 +14,9 @@ shinyUI(fluidPage(
   # Sidebar with drop-down for vehicle class and numeric input for model year
   sidebarLayout(
     sidebarPanel(
-      selectInput('class', 'Select Vehicle Class', levels(d2$Class)),
-      numericInput('Year', 'Model Year', 1984,
-                   min = 1984, max = 2018),
+      selectInput('Class', 'Select Vehicle Class', levels(d2$Class)),
+      numericInput('Year', 'Year', 1997,
+                   min = 1997, max = 2018),
       submitButton("Submit")
     ),
     
