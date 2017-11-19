@@ -9,20 +9,26 @@ d2<-read.table("d2.Rda")
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Car Finder App"),
+  titlePanel("Vehicle Efficiency Search"),
   
   # Sidebar with drop-down for vehicle class and numeric input for model year
-  sidebarLayout(
-    sidebarPanel(
-      selectInput('Class', 'Select Vehicle Class', levels(d2$Class)),
-      numericInput('Year', 'Year', 1997,
-                   min = 1997, max = 2018),
-      submitButton("Submit")
-    ),
-    
-    # Show a plot of the generated distribution
-    mainPanel(
-       plotOutput("plot")
-    )
+  sidebarPanel(
+    selectInput('Class', 'Select Vehicle Class', levels(d2$Class)),
+    numericInput('Year', 'Model Year', 1997,
+                 min = 1997, max = 2018),
+    submitButton("Submit"),
+    h4("Instructions:"),
+    textOutput("helptext1"),
+    textOutput("helptext2"),
+    textOutput("helptext3"),
+    textOutput("helptext4"),
+    h6("If error, no cars match selection"),
+    h6("Save/Spend is 5 year fuel cost vs. average"),
+    h6("Data from US EPA available here:"),
+    uiOutput("tab")
+  ),
+  mainPanel(
+    plotOutput('plot'),
+    dataTableOutput('table')
   )
 ))
